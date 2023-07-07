@@ -15,6 +15,8 @@ public class PillarManager : MonoBehaviour
 
     [SerializeField] private Transform camera;
 
+    [SerializeField] private GameObject player;
+
 
     public Vector3 currentPillarPosition => current.transform.position;
     [SerializeField] private PillarController current;
@@ -69,7 +71,7 @@ public class PillarManager : MonoBehaviour
     public void NextLevel()
     {
         current = _targetPillar;
-        
+ 
         //Camera Animation
         var targetPosition = current.transform.position + _offSetCamera;
         var move = animationController.Move(camera, targetPosition, 0.2f);
